@@ -1,0 +1,32 @@
+name: Fecha
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run script
+        run: python ./fecha_hora/fecha.py
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-actions@v5
+        with: 
+          commit_message: Update Fecha Hora
+          commit_user_name: William Figueroa [Github Actions]
+          commit_user_email: wrfigueroam@gmail.com
+          commit_author: Dallas

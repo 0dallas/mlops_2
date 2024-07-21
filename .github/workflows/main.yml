@@ -3,6 +3,9 @@ name: Fecha
 on:
   push:
     branches: [main]
+  
+  # schedule:
+  #     - cron: '0 0 * * *'
 
 jobs:
   build:

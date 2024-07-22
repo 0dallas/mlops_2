@@ -31,7 +31,7 @@ jobs:
       #   run: pip install - requirements.txt
 
       - name: Run script
-        run: python3 ./fecha_hora/fecha.py
+        run: python ./fecha_hora/fecha.py
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5

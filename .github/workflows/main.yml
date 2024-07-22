@@ -24,8 +24,8 @@ jobs:
         with:
           python-version: '3.x'
           architecture: "x64"
-        env:
-          AGENT_TOOLSDIRECTORY: /opt/hostedtoolache
+        # env:
+        #   AGENT_TOOLSDIRECTORY: /opt/hostedtoolache
       
       # - name: Install pip
       #   run: pip install - requirements.txt

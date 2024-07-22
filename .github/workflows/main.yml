@@ -33,7 +33,7 @@ jobs:
       - name: Run script
         run: python ./fecha_hora/fecha.py
 
-      - name: Commit and Push changes...
+      - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with: 
           commit_message: Update Fecha Hora

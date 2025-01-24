@@ -1,0 +1,24 @@
+# Este es un worflow básico para inciar en Actions
+# Nombre del workflow |
+name: CI
+
+# Controles cuando el workflow se ejecutará
+on:
+  # Activa el workflow en eventos push pero solo para la rama "main"
+  push:
+    branches: ["main"]
+
+# Un worflow se compone de uno o más jobs que pueden ejecutarse secuencialmente o en paralelo.
+jobs:
+  # Este worflow contiene un único job llamado "build"
+  build:
+    # El tipo de runner en el que se ejecutará el job.
+    runs-on: ubuntu-latest
+    #Los steps representan una secuencia de tareas que se ejecutarán como parte del job.
+    steps:
+      # Ejecuta un conjunto de comandos utilizando el runners shell
+      - name: Ejecutar un script de varias lineas
+        run: |
+          echo Hola mundo!
+          echo Add other actions to build
+          echo prueba y despliega tu proyecto.

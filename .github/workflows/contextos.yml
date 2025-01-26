@@ -34,5 +34,5 @@ jobs:
           echo "${{runner.tool_cache}}"
           echo "${{env.var1}}"
           echo "${{secrets.AGENTE}}"
-          echo "${{secrets.CLAVE PRIVADA}}"
+          echo "${{secrets.CLAVE_PRIVADA}}"
           

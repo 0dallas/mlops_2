@@ -1,0 +1,24 @@
+name: comentario bot
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  comentario:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Comentario en el comit
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const commit_sha = context.payload.after;
+            const mensaje: "Hola Pepelucho";
+            await github.rest.repos.createCommitComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha : commit_sha,
+              body: `el mensaje es: **${mensaje}**`
+            });
+      

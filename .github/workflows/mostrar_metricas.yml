@@ -9,6 +9,9 @@ jobs:
   metricas:
     runs-on: ubuntu-latest
 
+    permissions: 
+      contents: write
+    
     steps:
       - name: Verificar código y clonar
         uses: actions/checkout@v3

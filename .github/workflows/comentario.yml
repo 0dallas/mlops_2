@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
       - name: Comentario en el comit
         uses: actions/github-script@v6
         with:
           script: |
             const commit_sha = context.payload.after;
-            const mensaje: "Hola Pepelucho";
+            const mensaje = "Hola Pepelucho";
             await github.rest.repos.createCommitComment({
               owner: context.repo.owner,
               repo: context.repo.repo,

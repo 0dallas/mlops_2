@@ -1,0 +1,19 @@
+name: Runner flask
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  correr-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Verificar
+        uses: actions/checkout@v3
+
+      - name: Ejecutar
+        run: |
+          python app.py
+  

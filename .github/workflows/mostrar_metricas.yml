@@ -1,0 +1,40 @@
+name: Metricas Entrenamiento
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  metricas:
+    runs-on: ubuntu-latest
+
+    permissions: 
+      contents: write
+    
+    steps:
+      - name: Verificar código y clonar
+        uses: actions/checkout@v3
+
+      - name: Configurar CML
+        uses: iterative/setup-cml@v1
+        with: 
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Entrenar modelo
+        run: |
+          pip install -r requirements.txt
+          python3 train.py
+
+      - name: Reporte CML
+        run: |
+          cat results.txt >> report.md
+          echo "![training graph](./graph.png)" >> report.md
+          cml comment create report.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

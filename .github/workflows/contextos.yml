@@ -1,0 +1,38 @@
+name: CONTEXTOS
+
+on: 
+  push:
+    branches: ["main"]
+    
+jobs:
+  trabajo1:
+    runs-on: ubuntu-latest
+    env:
+      var1: Pepelucho
+    strategy:
+      matrix:
+        filas: [f1,f2,f3]
+        columnas: [col1,col2,col3]
+    steps:
+      - name: Paso 1
+        run: |
+          echo "------------------------------"
+          echo "${{matrix.filas}}"
+          echo "${{matrix.columnas}}"
+          echo "${{github.repository}}"
+          echo "${{github.ref}}"
+          echo "${{github.event_name}}"
+          echo "${{github.actor}}"
+          echo "${{github.sha}}"
+          echo "${{github.workflow}}"
+          echo "${{job.status}}"
+          echo "${{job.name}}"
+          echo "${{runner.os}}"
+          echo "${{runner.arch}}"
+          echo "${{runner.name}}"
+          echo "${{runner.temp}}"
+          echo "${{runner.tool_cache}}"
+          echo "${{env.var1}}"
+          echo "${{secrets.AGENTE}}"
+          echo "${{secrets.CLAVE_PRIVADA}}"
+          

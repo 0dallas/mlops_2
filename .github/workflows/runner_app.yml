@@ -13,13 +13,12 @@ jobs:
       - name: Verificar
         uses: actions/checkout@v3
 
-      - name: Configurar Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.9
+      # - name: Configurar Python
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: 3.9
 
       - name: Ejecutar
         run: |
-          pip install flask
           python app.py
   

@@ -68,13 +68,13 @@ f1 = f1_score(y_test, y_pred)
 
 
 with open("results.txt",'w') as file:
-    file.write( 
-    f'''accuracy:{accuracy}
-precision:{precision}
-recall:{recall}
-f1:{f1}
+    file.write( f"accuracy:{accuracy}\n")
+#     f'''accuracy:{accuracy}
+# precision:{precision}
+# recall:{recall}
+# f1:{f1}
 
-    ''')
+#     ''')
 
 aea = ConfusionMatrixDisplay.from_estimator(clf,X_test,y_test)
 aea.figure_.savefig("graph.png")

@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  prueba1:
+  prueba2:
     runs-on: self-hosted
 
     steps:

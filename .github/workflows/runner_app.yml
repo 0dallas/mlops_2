@@ -20,5 +20,5 @@ jobs:
 
       - name: Ejecutar
         run: |
-          python app.py
+          python hora.py
   

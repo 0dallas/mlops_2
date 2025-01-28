@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  correr-runner:
+  pruena1:
     runs-on: self-hosted
 
     steps:

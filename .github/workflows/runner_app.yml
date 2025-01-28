@@ -18,7 +18,7 @@ jobs:
       #   with:
       #     python-version: 3.9
 
-      - name: Ejecutar
+      - name: Ejecutar 1
         run: |
           python hora.py
   

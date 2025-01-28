@@ -10,8 +10,8 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Verificar
-        uses: actions/checkout@v3
+      # - name: Verificar
+      #   uses: actions/checkout@v3
 
       # - name: Configurar Python
       #   uses: actions/setup-python@v4

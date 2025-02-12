@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN pip install --no-cache-dir -r flask
 
-COPY . /app
+COPY app.py /app/app.py
 
 EXPOSE 8000
 

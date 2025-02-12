@@ -1,0 +1,22 @@
+name: Pruebas Python
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  trabajo1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Entorno python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Ejecutar script
+        run: python ./hello_world.py
+      
